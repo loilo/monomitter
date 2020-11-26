@@ -1,0 +1,44 @@
+{
+  "name": "monomitter",
+  "version": "1.0.0",
+  "description": "A tiny, overly simplistic event bus",
+  "main": "monomitter.umd.js",
+  "module": "monomitter.modern.js",
+  "types": "monomitter.d.ts",
+  "files": [
+    "monomitter.modern.js",
+    "monomitter.modern.js.map",
+    "monomitter.umd.js",
+    "monomitter.umd.js.map",
+    "monomitter.d.ts"
+  ],
+  "scripts": {
+    "build": "microbundle monomitter.mjs -f modern,umd",
+    "pretest": "npm run build",
+    "test": "jest && tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loilo/monomitter.git"
+  },
+  "keywords": [
+    "events",
+    "emitter",
+    "pubsub",
+    "bus",
+    "single",
+    "mono"
+  ],
+  "author": "Florian Reuschel <florian@loilo.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loilo/monomitter/issues"
+  },
+  "homepage": "https://github.com/loilo/monomitter#readme",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "microbundle": "^0.12.4",
+    "tsd": "^0.13.1"
+  },
+  "sideEffects": false
+}
