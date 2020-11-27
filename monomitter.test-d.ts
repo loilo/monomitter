@@ -16,7 +16,7 @@ expectType<ExpectedPublisher>(monomitter<[number, string]>()[0])
 // Check Subscriber type
 type ExpectedSubscriber = (
   callback: (...args: [number, string]) => void
-) => void
+) => () => void
 expectType<ExpectedSubscriber>(monomitter<[number, string]>()[1])
 
 // Should only allow array types as generic
