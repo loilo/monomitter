@@ -1,11 +1,12 @@
 const monomitter = require('./monomitter.umd')
 
-test('returns an array of two functions', () => {
+test('returns an array of three functions', () => {
   const instance = monomitter()
 
-  expect(instance).toHaveLength(2)
+  expect(instance).toHaveLength(3)
   expect(typeof instance[0]).toBe('function')
   expect(typeof instance[1]).toBe('function')
+  expect(typeof instance[2]).toBe('function')
 })
 
 test('publishes data to subscriber', () => {
@@ -90,4 +91,22 @@ test('leaves other subscribers unchanged on unsubscribing one', () => {
   expect(callback2).toHaveBeenCalledTimes(2)
   expect(callback2).toHaveBeenNthCalledWith(1, 'foo')
   expect(callback2).toHaveBeenNthCalledWith(2, 'bar')
+})
+
+test('returns a working clear function', () => {
+  const callback1 = jest.fn()
+  const callback2 = jest.fn()
+  const [pub, sub, clear] = monomitter()
+
+  sub(callback1)
+  sub(callback2)
+
+  pub('foo')
+  clear()
+  pub('bar')
+
+  expect(callback1).toHaveBeenCalledTimes(1)
+  expect(callback1).toHaveBeenLastCalledWith('foo')
+  expect(callback2).toHaveBeenCalledTimes(1)
+  expect(callback2).toHaveBeenLastCalledWith('foo')
 })

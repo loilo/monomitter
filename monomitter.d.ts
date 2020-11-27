@@ -3,8 +3,13 @@ declare type Unsubscriber = () => void
 declare type Subscriber<T extends any[]> = (
   callback: (...values: T) => void
 ) => Unsubscriber
+declare type Clear = () => void
 
-declare function monomitter<T extends any[]>(): [Publisher<T>, Subscriber<T>]
+declare function monomitter<T extends any[]>(): [
+  Publisher<T>,
+  Subscriber<T>,
+  Clear
+]
 
-export { Publisher, Subscriber, Unsubscriber }
+export { Publisher, Subscriber, Unsubscriber, Clear }
 export default monomitter

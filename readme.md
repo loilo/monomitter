@@ -22,15 +22,59 @@ import monomitter from 'monomitter'
 const [publish, subscribe] = monomitter()
 
 // log payload on publish
-const stop = subscribe((...payload) => {
+subscribe((...payload) => {
   console.log(payload)
 })
 
 publish(1, 2, 3) // logs [1, 2, 3]
 publish('Hello world!') // logs ["Hello world!"]
 
+publish(42) // does not log
+```
+
+### Unsubscribe
+
+The subscribe function returns a callback to be used for unsubscribing:
+
+```js
+import monomitter from 'monomitter'
+
+const [publish, subscribe] = monomitter()
+
+// subscribe and get unsubscribe callback
+const stop = subscribe((...payload) => {
+  console.log(payload)
+})
+
+publish(1, 2, 3) // logs [1, 2, 3]
+
 // unsubscribe
 stop()
+
+publish(42) // does not log
+```
+
+### Clear All Subscribers
+
+The `monomitter` function returns a third item, a "clear-all" callback:
+
+```js
+import monomitter from 'monomitter'
+
+const [publish, subscribe, clear] = monomitter()
+
+// subscribe and get unsubscribe callback
+subscribe(() => {
+  console.log('hi from subscriber 1')
+})
+subscribe(() => {
+  console.log('hi from subscriber 2')
+})
+
+publish(1, 2, 3) // logs "hi from subscriber 1" and "hi from subscriber 2"
+
+// clear all subscribers
+clear()
 
 publish(42) // does not log
 ```

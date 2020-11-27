@@ -9,7 +9,8 @@ function monomitter() {
     callback => {
       callbacks.add(callback)
       return () => callbacks.delete(callback)
-    }
+    },
+    () => callbacks.clear()
   ]
 }
 
