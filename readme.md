@@ -11,7 +11,7 @@
 
 [![Version on npm](https://badgen.net/npm/v/monomitter)](https://www.npmjs.com/package/monomitter)
 
-The monomitter is a tiny (125 bytes minzipped), generic notification helper — a kind of topic-free pub/sub mechanism or a single-event event bus.
+The monomitter is a tiny (125 bytes minzipped), generic notification helper — a kind of topic-free pub/sub mechanism or a single-event event bus — designed to be used as a building block for reactive functionality..
 
 ## Basic Usage
 
