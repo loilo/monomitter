@@ -9,6 +9,7 @@
   <br>
 </div>
 
+[![Tests](https://badgen.net/github/checks/loilo/monomitter/master)](https://github.com/loilo/monomitter/actions)
 [![Version on npm](https://badgen.net/npm/v/monomitter)](https://www.npmjs.com/package/monomitter)
 
 The monomitter is a tiny (125 bytes minzipped), generic notification helper — a kind of topic-free pub/sub mechanism or a single-event event bus — designed to be used as a building block for reactive functionality..
