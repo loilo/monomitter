@@ -1,6 +1,6 @@
 {
   "name": "monomitter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A tiny, overly simplistic event bus",
   "main": "monomitter.umd.js",
   "module": "monomitter.modern.js",
