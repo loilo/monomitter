@@ -29,8 +29,6 @@ subscribe((...payload) => {
 
 publish(1, 2, 3) // logs [1, 2, 3]
 publish('Hello world!') // logs ["Hello world!"]
-
-publish(42) // does not log
 ```
 
 ### Unsubscribe
