@@ -1,4 +1,5 @@
-const monomitter = require('./monomitter.umd')
+import { jest } from '@jest/globals'
+import monomitter from '.'
 
 test('returns an array of three functions', () => {
   const instance = monomitter()

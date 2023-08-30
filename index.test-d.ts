@@ -1,5 +1,5 @@
 import { expectError, expectType } from 'tsd'
-import monomitter, { Publisher, Subscriber, Clear } from './monomitter'
+import monomitter, { Publisher, Subscriber, Clear } from '.'
 
 // Should return a Publisher and a Subscriber
 expectType<[Publisher<any>, Subscriber<any>, Clear]>(monomitter())

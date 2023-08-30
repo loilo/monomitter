@@ -1,21 +1,19 @@
 {
   "name": "monomitter",
   "version": "1.1.1",
+  "type": "module",
   "description": "A tiny, overly simplistic event bus",
-  "main": "monomitter.umd.js",
-  "module": "monomitter.modern.js",
-  "types": "monomitter.d.ts",
   "files": [
-    "monomitter.modern.js",
-    "monomitter.modern.js.map",
-    "monomitter.umd.js",
-    "monomitter.umd.js.map",
-    "monomitter.d.ts"
+    "index.js",
+    "index.d.ts",
+    "logo.svg"
   ],
+  "exports": {
+    "default": "./index.js",
+    "types": "./index.d.ts"
+  },
   "scripts": {
-    "build": "microbundle monomitter.mjs -f modern,umd",
-    "pretest": "npm run build",
-    "test": "jest && tsd"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest && tsd --files "
   },
   "repository": {
     "type": "git",
@@ -36,9 +34,8 @@
   },
   "homepage": "https://github.com/loilo/monomitter#readme",
   "devDependencies": {
-    "jest": "^26.6.3",
-    "microbundle": "^0.12.4",
-    "tsd": "^0.13.1"
+    "jest": "^29.6.4",
+    "tsd": "^0.28.1"
   },
   "sideEffects": false
 }
