@@ -37,5 +37,8 @@
     "jest": "^29.6.4",
     "tsd": "^0.28.1"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }
